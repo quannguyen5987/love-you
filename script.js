@@ -6,7 +6,7 @@ console.clear();
 let scene = new THREE.Scene();
 scene.background = new THREE.Color(0x160016);
 let camera = new THREE.PerspectiveCamera(60, innerWidth / innerHeight, 1, 1000);
-camera.position.set(0, 4, 21);
+camera.position.set(-30, 4, 30);
 let renderer = new THREE.WebGLRenderer();
 renderer.setSize(innerWidth, innerHeight);
 document.body.appendChild(renderer.domElement);
@@ -116,7 +116,7 @@ renderer.setAnimationLoop(() => {
 
 
 var i = 0;
-var txt1 = "Sagi yêu dấu...! <Nhưng không hề đầu gấu, <<Sagi babi...!  <Nhưng không hề chi li.  <<Sagi thân mến...! <Nhưng không thích chơi nến.     <<Sagi slay...     <Chắc là có straight =))))) <<Sagi Sagi...!   <Cái tên thật mê li, mê li....!";
+var txt1 = "Tôi yêu em đến nay chừng có thể <Ngọn lửa tình chưa hẳn đã tàn phai <Nhưng không để em bận lòng thêm nữa  <Hay hồn em phải gợn bóng u hoài  <<Tôi yêu em âm thầm, không hy vọng <Lúc rụt rè, khi hậm hực lòng ghen     <Tôi yêu em, yêu chân thành, đằm thắm <Cầu em được người tình như tôi đã yêu em";
 var speed = 50;
 typeWriter();
 function typeWriter() {
