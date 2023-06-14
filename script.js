@@ -139,12 +139,47 @@ function typeWriter() {
 
 const pElement = document.querySelector('#text2');
 pElement.style.display = 'none';
-// Xử lý sự kiện resize của window
 let initialDistance = null;
 
-// Xử lý sự kiện touchstart của window
+// // Xử lý sự kiện touchstart của window
+// window.addEventListener('touchstart', (event) => {
+//   // Nếu có đúng 2 ngón tay đang chạm xuống thì lưu khoảng cách ban đầu giữa 2 ngón tay
+//   if (event.touches.length === 2) {
+//     initialDistance = Math.hypot(
+//       event.touches[0].pageX - event.touches[1].pageX,
+//       event.touches[0].pageY - event.touches[1].pageY
+//     );
+//   }
+// });
+
+// // Xử lý sự kiện touchmove của window
+// window.addEventListener('touchmove', (event) => {
+//   if (initialDistance !== null) {
+//     // Tính toán khoảng cách hiện tại giữa 2 ngón tay
+//     const currentDistance = Math.hypot(
+//       event.touches[0].pageX - event.touches[1].pageX,
+//       event.touches[0].pageY - event.touches[1].pageY
+//     );
+//     const distanceDiff = currentDistance - initialDistance;
+
+//     // Nếu khoảng cách lớn hơn 200 thì hiển thị thẻ p
+//     if (distanceDiff > 200) {
+//       pElement.style.display = 'block';
+//     } else {
+//       pElement.style.display = 'none';
+//     }
+//   }
+// });
+
+// // Xử lý sự kiện touchend của window
+// window.addEventListener('touchend', () => {
+//   initialDistance = null;
+// });
+
+let totalDistance = 0;
+
+
 window.addEventListener('touchstart', (event) => {
-  // Nếu có đúng 2 ngón tay đang chạm xuống thì lưu khoảng cách ban đầu giữa 2 ngón tay
   if (event.touches.length === 2) {
     initialDistance = Math.hypot(
       event.touches[0].pageX - event.touches[1].pageX,
@@ -153,26 +188,34 @@ window.addEventListener('touchstart', (event) => {
   }
 });
 
-// Xử lý sự kiện touchmove của window
 window.addEventListener('touchmove', (event) => {
   if (initialDistance !== null) {
-    // Tính toán khoảng cách hiện tại giữa 2 ngón tay
     const currentDistance = Math.hypot(
       event.touches[0].pageX - event.touches[1].pageX,
       event.touches[0].pageY - event.touches[1].pageY
     );
     const distanceDiff = currentDistance - initialDistance;
 
-    // Nếu khoảng cách lớn hơn 200 thì hiển thị thẻ p
-    if (distanceDiff > 200) {
-      pElement.style.display = 'block';
+    // Cộng/trừ khoảng cách hiện tại vào tổng
+    totalDistance += distanceDiff;
+
+    // Nếu tổng lớn hơn 200 thì hiển thị thẻ p
+    if (totalDistance > 700) {
+      nho();
     } else {
       pElement.style.display = 'none';
     }
+
+    // Cập nhật khoảng cách ban đầu cho lần chạm tay tiếp theo
+    initialDistance = currentDistance;
   }
 });
 
-// Xử lý sự kiện touchend của window
+
+function nho() {
+  pElement.style.display = 'block';
+}
+
 window.addEventListener('touchend', () => {
   initialDistance = null;
 });
