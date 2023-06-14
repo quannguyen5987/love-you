@@ -116,7 +116,7 @@ renderer.setAnimationLoop(() => {
 
 
 var i = 0;
-var txt1 = "Tôi yêu em đến nay chừng có thể <Ngọn lửa tình chưa hẳn đã tàn phai <Nhưng không để em bận lòng thêm nữa  <Hay hồn em phải gợn bóng u hoài  <<Tôi yêu em âm thầm, không hy vọng <Lúc rụt rè, khi hậm hực lòng ghen     <Tôi yêu em, yêu chân thành, đằm thắm <Cầu em được người tình như tôi đã yêu em";
+var txt1 = "Nguyễn Văn Quân 🫶🏼🫶🏼🫶🏼";
 var speed = 50;
 typeWriter();
 function typeWriter() {
