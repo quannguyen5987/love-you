@@ -219,29 +219,29 @@ window.addEventListener('touchend', () => {
 function nho() {
   pElement.style.display = 'block';
 
-var i = 0;
-var txt1 = "Nhỏ dễ thương";
-var speed = 200;
+
 typeWriter2();
 
 }
 
-
+var i2 = 0;
+var txt2 = "Nhỏ dễ thương";
+var speed2 = 200;
 
 function typeWriter2() {
-  if (i < txt1.length) {        
-     if(txt1.charAt(i)=='<')
+  if (i2 < txt2.length) {        
+     if(txt2.charAt(i2)=='<')
       document.getElementById("text2").innerHTML += '</br>'
-    else if(txt1.charAt(i)=='>')
+    else if(txt2.charAt(i2)=='>')
       document.getElementById("text2").innerHTML = ''
-    else if(txt1.charAt(i)=='|')
+    else if(txt2.charAt(i2)=='|')
       {
         $(".bg_heart").css("");
 
       }
     else
-      document.getElementById("text1").innerHTML += txt1.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
+      document.getElementById("text2").innerHTML += txt2.charAt(i2);
+    i2++;
+    setTimeout(typeWriter, speed2);
   }
 }
