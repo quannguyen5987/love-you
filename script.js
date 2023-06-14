@@ -164,7 +164,7 @@ window.addEventListener('touchmove', (event) => {
     const distanceDiff = currentDistance - initialDistance;
 
     // Nếu khoảng cách lớn hơn 200 thì hiển thị thẻ p
-    if (distanceDiff > 1) {
+    if (distanceDiff > 200) {
       pElement.style.display = 'block';
     } else {
       pElement.style.display = 'none';
