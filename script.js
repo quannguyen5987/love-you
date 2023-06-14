@@ -117,7 +117,7 @@ renderer.setAnimationLoop(() => {
 
 var i = 0;
 var txt1 = "Nguyễn Văn Quân 🫶🏼🫶🏼🫶🏼";
-var speed = 50;
+var speed = 200;
 typeWriter();
 function typeWriter() {
   if (i < txt1.length) {        
@@ -138,43 +138,8 @@ function typeWriter() {
 }
 
 const pElement = document.querySelector('#text2');
-pElement.style.display = 'none';
+// pElement.style.display = 'none';
 let initialDistance = null;
-
-// // Xử lý sự kiện touchstart của window
-// window.addEventListener('touchstart', (event) => {
-//   // Nếu có đúng 2 ngón tay đang chạm xuống thì lưu khoảng cách ban đầu giữa 2 ngón tay
-//   if (event.touches.length === 2) {
-//     initialDistance = Math.hypot(
-//       event.touches[0].pageX - event.touches[1].pageX,
-//       event.touches[0].pageY - event.touches[1].pageY
-//     );
-//   }
-// });
-
-// // Xử lý sự kiện touchmove của window
-// window.addEventListener('touchmove', (event) => {
-//   if (initialDistance !== null) {
-//     // Tính toán khoảng cách hiện tại giữa 2 ngón tay
-//     const currentDistance = Math.hypot(
-//       event.touches[0].pageX - event.touches[1].pageX,
-//       event.touches[0].pageY - event.touches[1].pageY
-//     );
-//     const distanceDiff = currentDistance - initialDistance;
-
-//     // Nếu khoảng cách lớn hơn 200 thì hiển thị thẻ p
-//     if (distanceDiff > 200) {
-//       pElement.style.display = 'block';
-//     } else {
-//       pElement.style.display = 'none';
-//     }
-//   }
-// });
-
-// // Xử lý sự kiện touchend của window
-// window.addEventListener('touchend', () => {
-//   initialDistance = null;
-// });
 
 let totalDistance = 0;
 
@@ -201,7 +166,8 @@ window.addEventListener('touchmove', (event) => {
 
     // Nếu tổng lớn hơn 200 thì hiển thị thẻ p
     if (totalDistance > 700) {
-      nho();
+      pElement.style.display = 'block';
+      typeWriter2();
     } else {
       pElement.style.display = 'none';
     }
@@ -216,17 +182,10 @@ window.addEventListener('touchend', () => {
 });
 
 
-function nho() {
-  pElement.style.display = 'block';
-
-
-typeWriter2();
-
-}
 
 var i2 = 0;
 var txt2 = "Nhỏ dễ thương";
-var speed2 = 200;
+var speed2 = 600;
 
 function typeWriter2() {
   if (i2 < txt2.length) {        
@@ -242,6 +201,6 @@ function typeWriter2() {
     else
       document.getElementById("text2").innerHTML += txt2.charAt(i2);
     i2++;
-    setTimeout(typeWriter, speed2);
+    setTimeout(typeWriter2, speed2);
   }
 }
