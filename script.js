@@ -136,3 +136,43 @@ function typeWriter() {
     setTimeout(typeWriter, speed);
   }
 }
+
+const pElement = document.querySelector('#text2');
+pElement.style.display = 'none';
+// Xử lý sự kiện resize của window
+let initialDistance = null;
+
+// Xử lý sự kiện touchstart của window
+window.addEventListener('touchstart', (event) => {
+  // Nếu có đúng 2 ngón tay đang chạm xuống thì lưu khoảng cách ban đầu giữa 2 ngón tay
+  if (event.touches.length === 2) {
+    initialDistance = Math.hypot(
+      event.touches[0].pageX - event.touches[1].pageX,
+      event.touches[0].pageY - event.touches[1].pageY
+    );
+  }
+});
+
+// Xử lý sự kiện touchmove của window
+window.addEventListener('touchmove', (event) => {
+  if (initialDistance !== null) {
+    // Tính toán khoảng cách hiện tại giữa 2 ngón tay
+    const currentDistance = Math.hypot(
+      event.touches[0].pageX - event.touches[1].pageX,
+      event.touches[0].pageY - event.touches[1].pageY
+    );
+    const distanceDiff = currentDistance - initialDistance;
+
+    // Nếu khoảng cách lớn hơn 200 thì hiển thị thẻ p
+    if (distanceDiff > 1) {
+      pElement.style.display = 'block';
+    } else {
+      pElement.style.display = 'none';
+    }
+  }
+});
+
+// Xử lý sự kiện touchend của window
+window.addEventListener('touchend', () => {
+  initialDistance = null;
+});

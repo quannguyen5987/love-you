@@ -16,3 +16,12 @@ body{
   width: 100%;
   font-size: 50px;
 }
+#text2{
+  position:fixed;
+  top: 50%;
+  left: 50%;
+  /* height:80%; */
+  /* width:30%; */
+  color:white;
+  font-family:cursive;
+}
