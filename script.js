@@ -211,6 +211,10 @@ window.addEventListener('touchmove', (event) => {
   }
 });
 
+window.addEventListener('touchend', () => {
+  initialDistance = null;
+});
+
 
 function nho() {
   pElement.style.display = 'block';
@@ -218,13 +222,18 @@ function nho() {
 var i = 0;
 var txt1 = "Nhỏ dễ thương";
 var speed = 200;
-typeWriter();
-function typeWriter() {
+typeWriter2();
+
+}
+
+
+
+function typeWriter2() {
   if (i < txt1.length) {        
      if(txt1.charAt(i)=='<')
-      document.getElementById("text1").innerHTML += '</br>'
+      document.getElementById("text2").innerHTML += '</br>'
     else if(txt1.charAt(i)=='>')
-      document.getElementById("text1").innerHTML = ''
+      document.getElementById("text2").innerHTML = ''
     else if(txt1.charAt(i)=='|')
       {
         $(".bg_heart").css("");
@@ -236,8 +245,3 @@ function typeWriter() {
     setTimeout(typeWriter, speed);
   }
 }
-}
-
-window.addEventListener('touchend', () => {
-  initialDistance = null;
-});
