@@ -116,8 +116,8 @@ renderer.setAnimationLoop(() => {
 
 
 var i = 0;
-var txt1 = "Nguyễn Văn Quân 🫶🏼🫶🏼🫶🏼";
-var speed = 200;
+var txt1 = "Xin lỗi e mà, a sẽ không dỗi giả nữa 🤭";
+var speed = 150;
 typeWriter();
 function typeWriter() {
   if (i < txt1.length) {        
@@ -184,7 +184,7 @@ window.addEventListener('touchend', () => {
 
 
 var i2 = 0;
-var txt2 = "Nhỏ dễ thương";
+var txt2 = "Ngọc Huyền đáng yêu 🤭";
 var speed2 = 600;
 
 function typeWriter2() {
