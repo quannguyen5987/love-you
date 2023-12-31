@@ -184,7 +184,7 @@ window.addEventListener('touchend', () => {
 
 
 var i2 = 0;
-var txt2 = "Bông hoa nhỏ 🌻🌻🌻";
+var txt2 = "NVQ tặng bông hoa nhỏ🌻🌻🌻";
 var speed2 = 600;
 
 function typeWriter2() {
