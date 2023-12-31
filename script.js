@@ -116,12 +116,12 @@ renderer.setAnimationLoop(() => {
 
 
 var i = 0;
-var txt1 = "Xin lỗi e mà, a sẽ không dỗi giả nữa 🤭";
+var txt1 = "Cậu là cô bé rất rất là| dễ thương, năm mới chúc| cậu vui vẻ, xinh đẹp, |luôn cười thật tươi 😊";
 var speed = 150;
 typeWriter();
 function typeWriter() {
   if (i < txt1.length) {        
-     if(txt1.charAt(i)=='<')
+     if(txt1.charAt(i)=='|')
       document.getElementById("text1").innerHTML += '</br>'
     else if(txt1.charAt(i)=='>')
       document.getElementById("text1").innerHTML = ''
@@ -184,7 +184,7 @@ window.addEventListener('touchend', () => {
 
 
 var i2 = 0;
-var txt2 = "Ngọc Huyền đáng yêu 🤭";
+var txt2 = "Bông hoa nhỏ 🌻🌻🌻";
 var speed2 = 600;
 
 function typeWriter2() {
