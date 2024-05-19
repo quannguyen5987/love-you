@@ -54,7 +54,7 @@ window.addEventListener('touchend', () => {
 
 
 var i2 = 0;
-var txt2 = "Anh tin em làm được🤭";
+var txt2 = "Anh tin em làm được 🥰";
 var speed2 = 600;
 
 function typeWriter2() {
