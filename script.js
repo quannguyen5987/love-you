@@ -217,7 +217,7 @@ window.addEventListener('touchend', () => {
 
 
 var i2 = 0;
-var txt2 = "Trần Ánh Ngọc đáng yêu 🤭";
+var txt2 = "Cố lên Bim Bim nhé🤭";
 var speed2 = 600;
 
 function typeWriter2() {
