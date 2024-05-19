@@ -3,6 +3,56 @@ import {OrbitControls} from "https://cdn.skypack.dev/three@0.136.0/examples/jsm/
 
 console.clear();
 
+
+const pElement = document.querySelector('#text2');
+// pElement.style.display = 'none';
+let initialDistance = null;
+
+let totalDistance = 0;
+
+
+window.addEventListener('touchstart', (event) => {
+  if (event.touches.length === 2) {
+    initialDistance = Math.hypot(
+      event.touches[0].pageX - event.touches[1].pageX,
+      event.touches[0].pageY - event.touches[1].pageY
+    );
+  }
+});
+
+window.addEventListener('touchmove', (event) => {
+  if (initialDistance !== null) {
+    const currentDistance = Math.hypot(
+      event.touches[0].pageX - event.touches[1].pageX,
+      event.touches[0].pageY - event.touches[1].pageY
+    );
+    const distanceDiff = currentDistance - initialDistance;
+
+    // Cộng/trừ khoảng cách hiện tại vào tổng
+    totalDistance += distanceDiff;
+
+    // Nếu tổng lớn hơn 200 thì hiển thị thẻ p
+    if (totalDistance > 700) {
+      pElement.style.display = 'block';
+      typeWriter2();
+    } else {
+      pElement.style.display = 'none';
+    }
+
+    // Cập nhật khoảng cách ban đầu cho lần chạm tay tiếp theo
+    initialDistance = currentDistance;
+  }
+});
+
+window.addEventListener('touchend', () => {
+  initialDistance = null;
+});
+
+
+
+
+
+
 var i2 = 0;
 var txt2 = "Cố lên Bim Bim nhé🤭";
 var speed2 = 600;
@@ -191,50 +241,3 @@ function typeWriter() {
     setTimeout(typeWriter, speed);
   }
 }
-
-const pElement = document.querySelector('#text2');
-// pElement.style.display = 'none';
-let initialDistance = null;
-
-let totalDistance = 0;
-
-
-window.addEventListener('touchstart', (event) => {
-  if (event.touches.length === 2) {
-    initialDistance = Math.hypot(
-      event.touches[0].pageX - event.touches[1].pageX,
-      event.touches[0].pageY - event.touches[1].pageY
-    );
-  }
-});
-
-window.addEventListener('touchmove', (event) => {
-  if (initialDistance !== null) {
-    const currentDistance = Math.hypot(
-      event.touches[0].pageX - event.touches[1].pageX,
-      event.touches[0].pageY - event.touches[1].pageY
-    );
-    const distanceDiff = currentDistance - initialDistance;
-
-    // Cộng/trừ khoảng cách hiện tại vào tổng
-    totalDistance += distanceDiff;
-
-    // Nếu tổng lớn hơn 200 thì hiển thị thẻ p
-    if (totalDistance > 700) {
-      pElement.style.display = 'block';
-      typeWriter2();
-    } else {
-      pElement.style.display = 'none';
-    }
-
-    // Cập nhật khoảng cách ban đầu cho lần chạm tay tiếp theo
-    initialDistance = currentDistance;
-  }
-});
-
-window.addEventListener('touchend', () => {
-  initialDistance = null;
-});
-
-
-
