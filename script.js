@@ -3,6 +3,28 @@ import {OrbitControls} from "https://cdn.skypack.dev/three@0.136.0/examples/jsm/
 
 console.clear();
 
+var i2 = 0;
+var txt2 = "Cố lên Bim Bim nhé🤭";
+var speed2 = 600;
+
+function typeWriter2() {
+  if (i2 < txt2.length) {        
+     if(txt2.charAt(i2)=='<')
+      document.getElementById("text2").innerHTML += '</br>'
+    else if(txt2.charAt(i2)=='>')
+      document.getElementById("text2").innerHTML = ''
+    else if(txt2.charAt(i2)=='|')
+      {
+        $(".bg_heart").css("");
+
+      }
+    else
+      document.getElementById("text2").innerHTML += txt2.charAt(i2);
+    i2++;
+    setTimeout(typeWriter2, speed2);
+  }
+}
+
 const daysEl = document.getElementById("days");
 const hoursEl = document.getElementById("hours");
 const minsEl = document.getElementById("mins");
@@ -216,24 +238,3 @@ window.addEventListener('touchend', () => {
 
 
 
-var i2 = 0;
-var txt2 = "Cố lên Bim Bim nhé🤭";
-var speed2 = 600;
-
-function typeWriter2() {
-  if (i2 < txt2.length) {        
-     if(txt2.charAt(i2)=='<')
-      document.getElementById("text2").innerHTML += '</br>'
-    else if(txt2.charAt(i2)=='>')
-      document.getElementById("text2").innerHTML = ''
-    else if(txt2.charAt(i2)=='|')
-      {
-        $(".bg_heart").css("");
-
-      }
-    else
-      document.getElementById("text2").innerHTML += txt2.charAt(i2);
-    i2++;
-    setTimeout(typeWriter2, speed2);
-  }
-}
